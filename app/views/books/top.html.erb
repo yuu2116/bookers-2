@@ -1,0 +1,24 @@
+<% if flash[:notice] %>
+   <div class="flash">
+     <%= flash[:notice] %>
+   </div>
+ <% end %>
+
+<div class="main">
+<h1>welcome to<strong><span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers</strong>  !!</h1>
+</div>
+
+<div class="sentence">
+<p>In<strong><span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers</strong>, </p>
+<p>you can share and exchange  your opinions , inpressions , and emotions</p>
+<p> about various books!</p>
+<%= link_to "Log in", user_session_path, class: "btn btn-info"%>
+<% if user_signed_in? %>
+<%= link_to "Sign Up", user_path(current_user), class: "btn btn-success" %>
+
+<%else%>
+<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success" %>
+
+<%end%>
+
+</div>
